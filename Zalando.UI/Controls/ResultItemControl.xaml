@@ -1,0 +1,53 @@
+﻿<UserControl
+    x:Class="Zalando.UI.Controls.ResultItemControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Zalando.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ResultItemUserControl"
+    mc:Ignorable="d"
+    d:DesignHeight="150"
+    d:DesignWidth="300">
+
+    <StackPanel DataContext="{Binding ElementName=ResultItemUserControl}" x:Name="ResultItemContainer" Style="{StaticResource SearchResultItemContainerStyle}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ResultItemContainer.Orientation" Value="Vertical"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ResultItemContainer.Orientation" Value="Horizontal"/>
+                        <Setter Target="ResultItemContainer.HorizontalAlignment" Value="Stretch"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Image Grid.Row="0" Style="{StaticResource ArticleImageStyle}">
+            <Image.Source>
+                <BitmapImage UriSource="{Binding ArticleSearchResultItem.MediaUrl}" />
+            </Image.Source>
+        </Image>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource SearchResultDetailsContainerStyle}">
+            <TextBlock Text="{Binding ArticleSearchResultItem.Name}" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding ArticleSearchResultItem.Size}" />
+            <TextBlock Text="{Binding ArticleSearchResultItem.FormattedCost}" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>
