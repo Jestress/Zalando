@@ -32,11 +32,6 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
         
         <Image Grid.Row="0" Style="{StaticResource ArticleImageStyle}">
             <Image.Source>
