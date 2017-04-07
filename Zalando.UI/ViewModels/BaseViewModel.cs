@@ -2,10 +2,9 @@
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 using System.ComponentModel;
+using Windows.UI.Xaml.Navigation;
 using Zalando.AppLibrary.DataServices;
 using Zalando.UI.Core;
-using System;
-using Windows.UI.Xaml.Navigation;
 
 namespace Zalando.UI.ViewModels
 {

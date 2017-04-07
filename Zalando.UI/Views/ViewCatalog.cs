@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Zalando.UI.Views
 {
+    /// <summary>
+    /// Singleton class that holds registered views inside the application
+    /// </summary>
     public static class ViewCatalog
     {
         public static readonly string SearchViewKey = "SearchView";

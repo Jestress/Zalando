@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using Newtonsoft.Json;
-using System;
 using System.Collections.ObjectModel;
 
 namespace Zalando.AppLibrary.Messages

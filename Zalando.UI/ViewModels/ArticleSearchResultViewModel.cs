@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using System.Collections.ObjectModel;
-using Zalando.UI.Models;
-using Zalando.AppLibrary.Messages;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
+using Zalando.AppLibrary.Messages;
+using Zalando.UI.Models;
 
 namespace Zalando.UI.ViewModels
 {
