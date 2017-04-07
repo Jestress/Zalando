@@ -28,8 +28,20 @@
         </TextBox>
 
         <StackPanel Grid.Row="1" Style="{StaticResource GenderSelectionContainerStyle}">
-            <RadioButton Content="Men"   IsChecked="{Binding Model.IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
-            <RadioButton Content="Women" IsChecked="{Binding Model.IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
+            <RadioButton Content="Men"   IsChecked="{Binding Model.IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}" >
+                <interactivity:Interaction.Behaviors>
+                    <command:EventTriggerBehavior EventName="Checked">
+                        <command:InvokeCommandAction Command="{Binding ProvideAutoSuggestionsCommand}" />
+                    </command:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </RadioButton>
+            <RadioButton Content="Women" IsChecked="{Binding Model.IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}">
+                <interactivity:Interaction.Behaviors>
+                    <command:EventTriggerBehavior EventName="Checked">
+                        <command:InvokeCommandAction Command="{Binding ProvideAutoSuggestionsCommand}" />
+                    </command:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </RadioButton>
         </StackPanel>
 
         <ListView Grid.Row="2" ItemsSource="{Binding Model.FacetResults}" SelectionMode="Single" SelectedItem="{Binding Model.SelectedFacet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
