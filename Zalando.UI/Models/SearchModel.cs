@@ -22,5 +22,10 @@ namespace Zalando.UI.Models
 
         private ObservableCollection<Facet> facetResults;
         public ObservableCollection<Facet> FacetResults { get { return facetResults; } set { facetResults = value; RaisePropertyChanged(); } }
+
+        public SearchModel()
+        {
+            IsMale = true;
+        }
     }
 }

@@ -117,8 +117,7 @@ namespace Zalando.UI.ViewModels
 
         public override void Activate(object parameter)
         {
-            //Set default value on start-up
-            Model.IsMale = true;
+
         }
     }
 }
