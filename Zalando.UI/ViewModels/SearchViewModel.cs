@@ -102,6 +102,9 @@ namespace Zalando.UI.ViewModels
         /// <returns></returns>
         private async Task ShowResults()
         {
+            if (Model.SelectedFacet == null)
+                return;
+
             //Initalize Model of the ArticleSearchResult view
             var searchResultModel = new ArticleSearchResultModel { SelectedFacet = Model.SelectedFacet, IsMale = Model.IsMale, CurrentPageNumber = 1 };
 
