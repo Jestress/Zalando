@@ -48,7 +48,7 @@ namespace Zalando.UI.ViewModels
         }
 
         /// <summary>
-        /// 
+        /// Increment the current page count and retrieve next page of articles with the new page number from Articles API
         /// </summary>
         /// <returns></returns>
         public async Task GetNextResultPage()

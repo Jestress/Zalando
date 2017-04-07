@@ -38,7 +38,7 @@
     <Style x:Key="SearchResultItemContainerStyle" TargetType="StackPanel">
         <Setter Property="Orientation" Value="Horizontal"/>
         <Setter Property="MinHeight" Value="150"/>
-        <Setter Property="MinWidth" Value="300"/>
+        <Setter Property="MinWidth" Value="450"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
@@ -47,6 +47,6 @@
         <Setter Property="Orientation" Value="Vertical"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Height" Value="100"/>
-        <Setter Property="Width" Value="200"/>
+        <Setter Property="Width" Value="300"/>
     </Style>
 </ResourceDictionary>
