@@ -12,7 +12,7 @@ namespace Zalando.UI.Models
         public bool SearchEnabled { get { return !string.IsNullOrEmpty(this.QueryText); } }
 
         private bool isMale;
-        public bool IsMale { get { return isMale; } set { isMale = value; RaisePropertyChanged(); } }
+        public bool IsMale { get { return isMale; } set { isMale = value; QueryText = string.Empty; RaisePropertyChanged(); } }
 
         private bool isFemale;
         public bool IsFemale { get { return isFemale; } set { isFemale = value; RaisePropertyChanged(); } }

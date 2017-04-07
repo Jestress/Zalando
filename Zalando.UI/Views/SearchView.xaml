@@ -28,8 +28,8 @@
         </TextBox>
 
         <StackPanel Grid.Row="1" Style="{StaticResource GenderSelectionContainerStyle}">
-            <RadioButton Content="Men"   IsChecked="{Binding Model.IsMale}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
-            <RadioButton Content="Women" IsChecked="{Binding Model.IsFemale}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
+            <RadioButton Content="Men"   IsChecked="{Binding Model.IsMale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
+            <RadioButton Content="Women" IsChecked="{Binding Model.IsFemale, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GenderSelectionRadioButtonStyle}" />
         </StackPanel>
 
         <ListView Grid.Row="2" ItemsSource="{Binding Model.FacetResults}" SelectionMode="Single" SelectedItem="{Binding Model.SelectedFacet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
