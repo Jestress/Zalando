@@ -38,15 +38,15 @@
     <Style x:Key="SearchResultItemContainerStyle" TargetType="StackPanel">
         <Setter Property="Orientation" Value="Horizontal"/>
         <Setter Property="MinHeight" Value="150"/>
-        <Setter Property="MinWidth" Value="450"/>
+        <Setter Property="MinWidth" Value="320"/>
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="2"/>
     </Style>
 
-    <Style x:Key="SearchResultDetailsContainerStyle" TargetType="StackPanel">
-        <Setter Property="Orientation" Value="Vertical"/>
+    <Style x:Key="SearchResultDetailsContainerStyle" TargetType="Grid">
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Height" Value="100"/>
-        <Setter Property="Width" Value="300"/>
+        <Setter Property="Width" Value="220"/>
     </Style>
 </ResourceDictionary>

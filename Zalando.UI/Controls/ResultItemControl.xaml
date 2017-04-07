@@ -8,14 +8,14 @@
     x:Name="ResultItemUserControl"
     mc:Ignorable="d"
     d:DesignHeight="150"
-    d:DesignWidth="300">
+    d:DesignWidth="420">
 
     <StackPanel DataContext="{Binding ElementName=ResultItemUserControl}" x:Name="ResultItemContainer" Style="{StaticResource SearchResultItemContainerStyle}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="WideState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
+                        <AdaptiveTrigger MinWindowWidth="480" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="ResultItemContainer.Orientation" Value="Vertical"/>
@@ -27,7 +27,6 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="ResultItemContainer.Orientation" Value="Horizontal"/>
-                        <Setter Target="ResultItemContainer.HorizontalAlignment" Value="Stretch"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -39,10 +38,16 @@
             </Image.Source>
         </Image>
 
-        <StackPanel Grid.Row="1" Style="{StaticResource SearchResultDetailsContainerStyle}">
-            <TextBlock Text="{Binding ArticleSearchResultItem.Name}" TextWrapping="Wrap" />
-            <TextBlock Text="{Binding ArticleSearchResultItem.Size}" />
-            <TextBlock Text="{Binding ArticleSearchResultItem.FormattedCost}" />
-        </StackPanel>
+        <Grid Style="{StaticResource SearchResultDetailsContainerStyle}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="{Binding ArticleSearchResultItem.Name}" TextWrapping="Wrap" />
+            <TextBlock Grid.Row="1" Text="{Binding ArticleSearchResultItem.Size}" />
+            <TextBlock Grid.Row="2" Text="{Binding ArticleSearchResultItem.FormattedCost}" />
+        </Grid>
     </StackPanel>
 </UserControl>
